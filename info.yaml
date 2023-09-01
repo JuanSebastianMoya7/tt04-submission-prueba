@@ -1,14 +1,20 @@
 --- 
 # TinyTapeout project information
 project:
-  wokwi_id:    374337643538352129        # If using wokwi, set this to your project's ID
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
 
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
-#  source_files:        
-#    - counter.v
-#    - decoder.v
-#  top_module:  "tt_um_example"      # Put the name of your top module here, must start with "tt_um_". Make it unique by including your github username
+  source_files:        
+    - aes_data_path.v
+    - byte_permutation_unit.v
+    - key_expansion.v
+    - mixcolumn.v
+    - mux.v
+    - parallel_serial_converter.v
+    - sbox_case_4.v
+    - tt_um_AES.v
+  top_module:  "tt_um_AES"      # Put the name of your top module here, must start with "tt_um_". Make it unique by including your github username
 
 # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"    # Valid values: 1x1, 1x2, 2x2, 4x2 or 8x2
@@ -21,10 +27,10 @@ yaml_version: 4
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
 documentation: 
-  author:       "Juan Sebastian"      # Your name
-  title:        "Prueba_bootcamp_uniandes"      # Project title
-  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  description:  "sumador"      # Short description of what your project does
+  author:       "Shawn Rodrigues & Pablo Aravena"      # Your name
+  title:        "AES-128"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  ""      # Short description of what your project does
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
@@ -72,3 +78,4 @@ documentation:
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     0       # Clock frequency in Hz (if required)
   picture:      ""      # relative path to a picture in your repository (must be 512kb or less)
+
